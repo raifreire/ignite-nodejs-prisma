@@ -7,30 +7,35 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
+//###### Table create with Prisma #####################
 
 model Courses {
-  id            String    @id @default(uuid())
-  name          String    @unique
-  description   String?
-  duration      Int
-  created_at    DateTime      @default(now())
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String?
+  duration    Int
+  created_at  DateTime @default(now())
 
   @@map("courses")
 }
 
-model Modules {
-  id            String  @id   @default(uuid())
-  name          String  @unique
-  description   String
-  created_at    DateTime      @default(now())
+// ######## Comand line to run: create table ##########
+// ######## => yarn prisma migrate dev ###############
+// ######## => For insert data, search ###############
+// ########    an archive with name: server.ts #######
 
-  @@map("modules")
-}
+// model Modules {
+//   id          String   @id @default(uuid())
+//   name        String   @unique
+//   description String
+//   created_at  DateTime @default(now())
 
-model Categories {
-  id            String    @id       @default(uuid())
-  name          String    @unique
+//   @@map("modules")
+// }
 
-  @@map("categories")
-}
+// model Categories {
+//   id   String @id @default(uuid())
+//   name String @unique
+
+//   @@map("categories")
+// }
