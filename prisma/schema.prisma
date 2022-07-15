@@ -15,8 +15,18 @@ model Courses {
   description String?
   duration    Int
   created_at  DateTime @default(now())
+  teacher     Teachers @relation(fields: [fk_teachersId], references: [id])
 
+  fk_teachersId String @unique
   @@map("courses")
+}
+
+model Teachers {
+  id     String   @id @default(uuid())
+  name   String   @unique
+  course Courses?
+
+  @@map("teachers")
 }
 
 // ######## Comand line to run: create table ##########
