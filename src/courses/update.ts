@@ -1,19 +1,20 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient()
 
 async function main() {
-  const result = await prisma.courses.update({
-    where: {
-      id: "180cf0f4-84ad-4f82-8cb3-15b816809f9b",
-    },
-    data: {
-      duration: 250,
-      name: "Curso de ReactJS",
-    },
-  });
-
-  console.log(result);
+    const result = await prisma.courses.update({
+        where: {
+            id: "a2176e41-afcb-4e5e-999e-ba3ae3682461"
+        },
+        data: {
+            name: "Curso NodeJs",
+            description: "Aprendendo Node com Prisma ORM",
+            duration: 150
+        }
+    })
+    console.log(result)
 }
 
 main();
+

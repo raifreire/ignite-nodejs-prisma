@@ -7,7 +7,17 @@ async function main() {
     data: {
       duration: 300,
       name: "Curso de React Native",
-      description: "Curso excelente de React Native com Rodrigão",
+      description: "Curso excelente de React",
+      teacher: {
+        connectOrCreate: {
+          where: {
+            name: "Rafaela leão",
+          },
+          create: {
+            name: "Rafaela leão"
+          }
+        }
+      }
     },
   });
 
