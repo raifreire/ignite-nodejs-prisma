@@ -46,6 +46,37 @@ model Books {
   @@map("books")
 }
 
+model Courses2 {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String
+  duration    Int
+  created_at  DateTime @default(now())
+
+  ModelCourses ModulesCourses[]
+  @@map("courses2")
+}
+
+model Modules {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  description String
+  created_at  DateTime @default(now())
+
+  ModelCourses ModulesCourses[]
+  @@map("modules")
+}
+
+model ModulesCourses {
+  id             String   @id @default(uuid())
+  courses2       Courses2 @relation(fields: [fk_id_courses2], references: [id])
+  fk_id_courses2 String
+  module         Modules  @relation(fields: [fk_id_module], references: [id])
+  fk_id_module   String
+
+  @@map("modules_courses")
+}
+
 // ######## Comand line to run: create table ##########
 // ######## => yarn prisma migrate dev ###############
 // ######## => For insert data, search ###############
