@@ -5,9 +5,9 @@ const prisma = new PrismaClient();
 async function main() {
     const result = await prisma.courses2.create({
         data: {
-            name: "aa",
-            description: "aass",
-            duration: 144,
+            name: "Programação Avançada",
+            description: "Curso de Programação da Rocket",
+            duration: 800,
         }
     });
 

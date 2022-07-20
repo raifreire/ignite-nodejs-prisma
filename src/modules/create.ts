@@ -19,26 +19,26 @@ const prisma = new PrismaClient();
 // }
 
 
-// async function mainConnect() {
-//     const result = await prisma.modules.create({
-//         data: {
-//             name: "Sql no postgres",
-//                  description: "Usando SQL no Postgres",
-//                   ModelCourses: {
-//                      create: {
-//                       courses2: {
-//                         connect: {
-//                             id: "e19340e8-17df-4024-8745-e2e1e5b51585",
-//                         }
-//                     }
-//                 }
-//             },
-//         },
+async function mainConnect() {
+    const result = await prisma.modules.create({
+        data: {
+            name: "Sql no postgres",
+            description: "Usando SQL no Postgres",
+            ModelCourses: {
+                create: {
+                    courses2: {
+                        connect: {
+                            id: "5f5d94f5-16ec-4d41-a1c6-b182adfa02f8",
+                        }
+                    }
+                }
+            },
+        },
 
-//     });
+    });
 
-//     console.log(result);
-// }
+    console.log(result);
+}
 
 //mainConnectForFk()
-//mainConnect();
+mainConnect();
