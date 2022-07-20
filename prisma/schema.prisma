@@ -73,6 +73,7 @@ model ModulesCourses {
   fk_id_courses2 String
   module         Modules  @relation(fields: [fk_id_module], references: [id])
   fk_id_module   String
+  created_at     DateTime @default(now())
 
   @@map("modules_courses")
 }

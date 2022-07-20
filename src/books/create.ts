@@ -8,7 +8,7 @@ async function mainConnect() {
             name: "Harry Potter e as Reliquias de Morte",
             author: {
                 connect: {
-                    id: "27569b8e-748a-41e8-9c9d-acf64f2cfb30",
+                    id: "8ec5e243-1f44-4b81-90a0-7001b9ac32f1",
                 },
             },
         },

@@ -17,24 +17,34 @@ const prisma = new PrismaClient();
 //     console.log(result);
 // }
 
-
-// async function mainManys() {
+// async function mainConnect() {
 //     const result = await prisma.authors.create({
 //         data: {
-//             name: "Stan Lee",
-//             Books: {
-//                 createMany: {
-//                     data: [
-//                         { name: "Dr. strange" },
-//                         { name: "Iron Man 1" },
-//                         { name: "Origins OF Marvel Comics" },
-//                     ]
-//                 },
-//             },
+//             name: "J.K. Rowling",
 //         },
 //     });
+
 //     console.log(result);
 // }
+
+
+async function mainManys() {
+    const result = await prisma.authors.create({
+        data: {
+            name: "Stan Lee",
+            Books: {
+                createMany: {
+                    data: [
+                        { name: "Dr. strange" },
+                        { name: "Iron Man 1" },
+                        { name: "Origins OF Marvel Comics" },
+                    ]
+                },
+            },
+        },
+    });
+    console.log(result);
+}
 
 async function mainCreateOrConnect() {
 
@@ -42,4 +52,5 @@ async function mainCreateOrConnect() {
 
 
 //main();
-//mainManys();
+// mainConnect();
+mainManys();
